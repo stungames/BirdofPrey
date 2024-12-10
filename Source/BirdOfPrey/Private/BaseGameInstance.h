@@ -7,7 +7,6 @@
 
 #include "BaseGameInstance.generated.h"
 
-
 USTRUCT(BlueprintType)
 struct FSAgentInfo
 {
@@ -18,16 +17,29 @@ public:
 	FText Name;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	TSubclassOf<AActor> BaseWeaponType;
+	TSubclassOf<class ABaseWeapon> BaseWeaponType;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	USkeletalMesh* SkeletalMesh;
+	class USkeletalMesh* SkeletalMesh;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	UAnimInstance* AnimInstance;
+	TSubclassOf<class UAnimInstance> AnimInstance;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	UTexture2D* Image;    
+	class UTexture2D* Image;
+	
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	float Speed = 1000.f;
+
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	float Health = 250.f;
+
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	float MeshScale = 1.f;
+
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	FLinearColor Colour = FLinearColor::White;
+	
 };
 
 // Delegate signature
@@ -51,10 +63,10 @@ public:
 
     //Properties
     UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-    TArray<FSAgentInfo> PlayerAgentInfo; //After creating other class change this
+    TArray<FSAgentInfo> PlayerAgentInfo;
 
     //Delegates
     // Function signature
-    void OnAgentInfoChange(int32 PlayerControllerID, FSAgentInfo& AgentInfo); //After creating other class change this
+    void OnAgentInfoChange(int32 PlayerControllerID, FSAgentInfo& AgentInfo);
 	
 };

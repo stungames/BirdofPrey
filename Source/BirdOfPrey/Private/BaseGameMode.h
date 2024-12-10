@@ -20,13 +20,13 @@ public:
 	FVector GetWorldScrollVelocity() const;
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	UObject* GetWorldCameraActor() const; //After creating other class change this
+	UObject* GetWorldCameraActor() const; //I don't have WorldCameraActor
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void OnPlayerDied(UObject* BasePlayerController); //After creating other class change this
+	void OnPlayerDied(class ABasePlayerController* BasePlayerController);
 	
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void OnEnemyDied(UObject* Enemy, UObject* Killer); //After creating other class change this
+	void OnEnemyDied(class ABaseGameAgent* Enemy, AController* Killer);
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	void StartGame();
@@ -35,7 +35,7 @@ public:
 	void EndGame(bool bSuccess);
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void SpawnEnemyFrom(TArray<UObject*> ClassList); //After creating other class change this
+	void SpawnEnemyFrom(TArray<TSubclassOf<ABaseGameAgent>> ClassList);
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	void ResetGame();
@@ -57,7 +57,7 @@ public:
 	FVector2f MaxRelativePlayerOffset = FVector2f(500.f, 700.f);
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	class UObject* WorldCameraActor; //After creating other class change this
+	class UObject* WorldCameraActor; //I don't have WorldCameraActor
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
 	UDataTable* PlayerAgentInfoTable;
@@ -75,7 +75,7 @@ public:
 	FTimerHandle ShipSpawnTimer;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	TArray<class UObject*> PowerUpList; //After creating other class change this
+	TArray<class ABasePowerUp*> PowerUpList;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
 	float PickUpSpawnPercent = .3f;

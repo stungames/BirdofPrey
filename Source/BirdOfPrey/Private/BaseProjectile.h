@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "BaseGameAgent.h"
 #include "GameFramework/Actor.h"
 #include "BaseProjectile.generated.h"
 
@@ -70,7 +69,7 @@ public:
 	float GroundUnitCheckAngle = 10.f;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	ABaseGameAgent* GroundTarget;
+	class ABaseGameAgent* GroundTarget;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
 	float DesiredZ = 0.f;

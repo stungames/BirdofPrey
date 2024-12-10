@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "BaseGameInstance.h"
-#include "VREditorInteractor.h"
 #include "GameFramework/Pawn.h"
 #include "BaseGameAgent.generated.h"
 
@@ -45,14 +44,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	void StopFire() {};
 
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	float TakeDamage(float Damage) { return /*Actual Damage*/.0f; };
+	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //Actor Func
+	//float TakeDamage(float Damage) { return /*Actual Damage*/.0f; };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	bool IsAlive() { return false; };
 
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void Died(EControllerType Killer) { };
+	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //compiler error
+	//void Died(EControllerType Killer) { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	void PlayHitEffects() {};
