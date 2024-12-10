@@ -26,8 +26,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	bool ReadyToFire() { return false; };
 
-	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //Compile error
-	//bool IsFiring () const { return bIsFiring; };
+	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //Complier says, override UFUNCITON's cannot have UFUNCTION macro on it
+	bool IsFiring () const { return bIsFiring; };
 
 	//Properties
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")

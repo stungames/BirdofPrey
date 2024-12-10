@@ -20,10 +20,10 @@ class ABasePlayerController : public APlayerController
 public:
 	//Functions
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void CalcScreenDimensions();
+	void CalcScreenDimensions() { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void OnPlayerDeath(UObject* Killer); //After creating other class change this
+	void OnPlayerDeath(class AController* Killer) { };
 
 	//Properties
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")

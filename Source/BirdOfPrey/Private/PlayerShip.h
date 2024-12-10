@@ -28,8 +28,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	FVector CalcOutofBoundsAdjustment() { return FVector::ZeroVector; };
 
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //After creating other class change this, Actually I didn't found any Player Controller Type Var.
-	void GetPlayerAgentInfo(UObject* Player) {};
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	void GetPlayerAgentInfo(AController* Player) {};
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") 
 	void ShouldSpawnAIController() { };
@@ -40,7 +40,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //compiler error
 	bool HasDiedRecently() { return false;};
 
-	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //i didn't override yet
+	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //Complier says, Error  : 'APlayerShip::TakeDamage' hides overloaded virtual function [-Werror,-Woverloaded-virtual]
 	//void TakeDamage(float Damage) { };
 
 	//Add reset interface!!!

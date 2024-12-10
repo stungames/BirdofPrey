@@ -17,37 +17,37 @@ class ABaseGameMode : public AGameModeBase
 public:
 	//Functions
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	FVector GetWorldScrollVelocity() const;
+	FVector GetWorldScrollVelocity() const { return FVector::ZeroVector; };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	UObject* GetWorldCameraActor() const; //I don't have WorldCameraActor
+	UObject* GetWorldCameraActor() const { return nullptr; }; //I don't have WorldCameraActor
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void OnPlayerDied(class ABasePlayerController* BasePlayerController);
+	void OnPlayerDied(class ABasePlayerController* BasePlayerController) { };
 	
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void OnEnemyDied(class ABaseGameAgent* Enemy, AController* Killer);
+	void OnEnemyDied(class ABaseGameAgent* Enemy, AController* Killer) { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void StartGame();
+	void StartGame() { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void EndGame(bool bSuccess);
+	void EndGame(bool bSuccess) { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void SpawnEnemyFrom(TArray<TSubclassOf<ABaseGameAgent>> ClassList);
+	void SpawnEnemyFrom(TArray<TSubclassOf<ABaseGameAgent>> ClassList) { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void ResetGame();
+	void ResetGame() { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void RespawnPlayer();
+	void RespawnPlayer() { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	void TrySpawnPowerUp(FVector Location);
+	void TrySpawnPowerUp(FVector Location) { };
 	
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	float GetDistanceTravelled() const;
+	float GetDistanceTravelled() const { return .0f; };
 
 	//Properties
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")

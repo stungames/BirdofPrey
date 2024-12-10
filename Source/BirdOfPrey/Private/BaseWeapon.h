@@ -25,7 +25,7 @@ public:
 
 public:
 	//Functions
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //After creating other class change this
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	void StartFire() {};
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
@@ -43,7 +43,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	bool IsFiring() { return false; };
 
-	//Add Effects!!!
+	//Effects
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	class UParticleSystem* FireParticleEffect;
+	
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	class USoundCue* FireSoundCue;
 	
 	//Properties
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")

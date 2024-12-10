@@ -59,8 +59,8 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
 	float Damage = 50.f;
 
-	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey") //After creating other class change this
-	UObject* DetonationEmitter; 
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	class UParticleSystem* DetonationEmitter; 
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
 	float GroundUnitCheckDistance = 2000.f;

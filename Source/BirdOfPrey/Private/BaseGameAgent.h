@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "BaseGameInstance.h"
+#include "FSAgentInfo.h"
 #include "GameFramework/Pawn.h"
 #include "BaseGameAgent.generated.h"
 
@@ -29,8 +29,8 @@ public:
 
 public:
 	//Functions
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //After creating other class change this
-	void ChangeWeaponType(UObject* NewWeaponType) {};
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	void ChangeWeaponType(TSubclassOf<class ABaseWeapon> NewWeaponType) {};
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	FTransform GetWeaponSpawnTransform() { return FTransform(); };
@@ -44,14 +44,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	void StopFire() {};
 
-	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //Actor Func
+	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //Actor Func //'ABaseGameAgent::TakeDamage' hides overloaded virtual function [-Werror,-Woverloaded-virtual]
 	//float TakeDamage(float Damage) { return /*Actual Damage*/.0f; };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	bool IsAlive() { return false; };
 
-	//UFUNCTION(BlueprintCallable, Category = "BirdOfPrey") //compiler error
-	//void Died(EControllerType Killer) { };
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	void Died(AController* Killer) { };
 
 	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	void PlayHitEffects() {};
@@ -73,17 +73,28 @@ public:
 
 	//Add reset interface!!!
 
-	//Add Effects!!!
+	//Effects
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	class UParticleSystem* DeathParticleEffect;
+
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	class USoundCue* DeathSoundCue;
+
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	class USoundCue* HitSoundCue;
+
+	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
+	class UParticleSystem* HitParticleEffect;
 
 	//Properties
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
 	float MoveSpeed = 50.f;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	UObject* Weapon; //After creating other class change this
+	class ABaseWeapon* Weapon;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
-	UObject* DefaultWeaponType; //After creating other class change this
+	TSubclassOf<class ABaseWeapon> DefaultWeaponType;
 
 	UPROPERTY(BlueprintReadWrite, Category = "BirdOfPrey")
 	float Health = 100.f;
