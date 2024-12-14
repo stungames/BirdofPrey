@@ -6,7 +6,7 @@
 // Sets default values
 ABaseGameAgent::ABaseGameAgent()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }
@@ -15,7 +15,7 @@ ABaseGameAgent::ABaseGameAgent()
 void ABaseGameAgent::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -31,4 +31,62 @@ void ABaseGameAgent::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+
+void ABaseGameAgent::ChangeWeaponType(TSubclassOf<ABaseWeapon> NewWeaponType)
+{
+}
+
+void ABaseGameAgent::GetWeaponSpawnTransform(FTransform& SpawnTransform)
+{
+}
+
+void ABaseGameAgent::SpawnDefaultWeapon()
+{
+}
+
+void ABaseGameAgent::StartFire()
+{
+}
+
+void ABaseGameAgent::StopFire()
+{
+}
+
+void ABaseGameAgent::TakeDamage(float Damage, float& ActualDamage)
+{
+}
+
+void ABaseGameAgent::IsAlive(bool& Alive)
+{
+}
+
+void ABaseGameAgent::Died(AController* Killer)
+{
+}
+
+void ABaseGameAgent::PlayHitEffects()
+{
+}
+
+void ABaseGameAgent::CleanUp()
+{
+}
+
+void ABaseGameAgent::ApplyAgentInfo(FSAgentInfo NewAgentInfo)
+{
+}
+
+void ABaseGameAgent::AimAt(FVector AimTarget)
+{
+}
+
+void ABaseGameAgent::PlayDeathEffects()
+{
+}
+
+void ABaseGameAgent::CheckForOutOfBounds()
+{
+}
+
+
 
