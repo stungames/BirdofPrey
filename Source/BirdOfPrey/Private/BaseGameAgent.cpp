@@ -25,6 +25,64 @@ void ABaseGameAgent::Tick(float DeltaTime)
 
 }
 
+TSubclassOf<ABaseWeapon> ABaseGameAgent::ChangeWeaponType()
+{
+	return TSubclassOf<ABaseWeapon>();
+}
+
+void ABaseGameAgent::GetWeaponSpawnTransform(FTransform& SpawnTransform)
+{
+}
+
+void ABaseGameAgent::SpawnDefaultWeapon()
+{
+}
+
+void ABaseGameAgent::StartFire()
+{
+}
+
+void ABaseGameAgent::StopFire()
+{
+}
+
+void ABaseGameAgent::TakeDamage(float Damage, float& ActualDamage)
+{
+}
+
+
+void ABaseGameAgent::IsAlive(bool& Alive)
+{
+}
+
+void ABaseGameAgent::Died(AController* Killer)
+{
+}
+
+void ABaseGameAgent::PlayHitEffects()
+{
+}
+
+void ABaseGameAgent::CleanUp()
+{
+}
+
+void ABaseGameAgent::ApplyAgentInfo(FSAgentInfo NewAgentInfo)
+{
+}
+
+void ABaseGameAgent::AimAt(FVector AimTarget)
+{
+}
+
+void ABaseGameAgent::PlayDeathEffects()
+{
+}
+
+void ABaseGameAgent::CheckForOutOfBounds()
+{
+}
+
 // Called to bind functionality to input
 void ABaseGameAgent::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
